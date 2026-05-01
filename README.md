@@ -61,5 +61,5 @@ http://localhost:5173
 
 ## Deployment
 -The application has been deployed using Vercel.
--Live Demo: https://pokedexlite-cly83bz2y-prajwal-kharvis-projects.vercel.app/ 
+Live Demo: https://pokedexlite-cly83bz2y-prajwal-kharvis-projects.vercel.app/ 
 -GitHub Repository: https://github.com/prajwal-kharvi/pokedex_lite
