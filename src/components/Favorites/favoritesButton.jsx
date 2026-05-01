@@ -5,6 +5,7 @@ const FavoritesButton=({pokemon,favorites,toggleFavorites})=>{
     const isFav=favorites.some((f)=>f.id===pokemon.id)
 
     return(
+        //
         <motion.button
         onClick={()=>toggleFavorites(pokemon)}
         whileTap={{scale:1.4}}

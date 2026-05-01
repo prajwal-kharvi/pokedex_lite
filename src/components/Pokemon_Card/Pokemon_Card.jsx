@@ -9,7 +9,7 @@ import image from "/src/assets/pokemon.png"
 
 const Pokemon_Card=()=>{
 
-    //d
+    //destructuring
     const {filteredData,
         loading,
         error,
@@ -22,35 +22,33 @@ const Pokemon_Card=()=>{
         setSelectedType,
         setSelectedPokemon,
         selectedPokemon}=usePokemon()
-    console.log(filteredData)
 
     //favorites destructing
     const {favorites,toggleFavorite}=useFavorites()
 
     //shimmer loading show
-    if(loading){
+    if (loading) {
         return <Shimmer_Ui/>
     }
 
     //error loading or error message
-    if(error){
-        return <Error onRetry={fetchPokemon()}/>
+    if (error) {
+        return <Error onRetry={fetchPokemon}/>
     }
 
      return(
          <div className="w-full h-auto  p-16">
-             {/*search */}
-             <div className="flex gap-4 items-center mb-10 -mt-10">
-                 <input type="text"
-                        placeholder="Search Pokemon..."
-                        value={search}
-                        onChange={(e)=>setSearch(e.target.value)}
-                        className=" p-4 w-1/2 rounded-2xl bg-white outline-none"/>
-             {/*type filter  dropdown*/}
-                 <select
-                 value={selectedType}
-                 onChange={(e)=>setSelectedType(e.target.value)}
-                 className="p-4 rounded-2xl bg-white  outline-none">
+                {/*search */}
+                <div className="flex gap-4 items-center mb-10 -mt-10">
+                    <input type="text" placeholder="Search Pokemon..."
+                            value={search}
+                            onChange={(e)=>setSearch(e.target.value)}
+                            className=" p-4 w-1/2 rounded-2xl bg-white outline-none"/>
+                            {/*type filter  dropdown*/}
+                    <select
+                    value={selectedType}
+                    onChange={(e)=>setSelectedType(e.target.value)}
+                    className="p-4 rounded-2xl bg-white  outline-none">
                      {pokemon_types.map((type) => (
                          <option key={type} value={type}>
                              {type.toUpperCase()}
@@ -68,12 +66,12 @@ const Pokemon_Card=()=>{
                          <p className="text-lg font-semibold">No Pokémon Found</p>
                          <p className="text-sm">Try a different search or filter</p>
                      </div>
-                 ):(filteredData.map((p)=>(
+                        ):(filteredData.map((p)=>(
 
                      <div  key={p.id}
                            onClick={()=>setSelectedPokemon(p)}
                            className="relative   bg-gradient-to-br from-yellow-100 to-orange-200 p-6 rounded-2xl shadow-md text-center cursor-pointer hover:scale-105 hover:shadow-2xl hover:-translate-y-1 transition duration-300"
-                     >
+                        >
 
                          {/* Heart Button */}
                          <div className="absolute top-2 right-4"
@@ -106,8 +104,8 @@ const Pokemon_Card=()=>{
                          disabled={!prevUrl}
                          onClick={()=>fetchPokemon(prevUrl)}
                          className={`px-3 py-2 rounded text-white 
-                        ${!prevUrl ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}
-                        `}>
+                            ${!prevUrl ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}
+                            `}>
                          Previous
                      </button>
                      <button
@@ -122,7 +120,7 @@ const Pokemon_Card=()=>{
              )}
 
 
-         {/*    Detail Modal*/}
+            {/* Detail Modal*/}
              {selectedPokemon &&(
                  <PokemonModal
                  pokemon={selectedPokemon}

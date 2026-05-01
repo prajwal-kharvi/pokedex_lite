@@ -1,5 +1,6 @@
 const Error = ({  onRetry }) => {
     return (
+        //error handling section
         <div className="text-center">
             <h2 className="text-red-500">Failed to load Pokémon</h2>
             <button

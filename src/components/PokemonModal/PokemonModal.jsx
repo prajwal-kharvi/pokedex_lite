@@ -2,13 +2,12 @@ const PokemonModal = ({ pokemon, onClose }) => {
 
     // stats data
     const stats = [
-        { name: "HP", value: pokemon.stats[0].base_stat, color: "bg-green-500" },
-        { name: "Attack", value: pokemon.stats[1].base_stat, color: "bg-red-500" },
-        { name: "Defense", value: pokemon.stats[2].base_stat, color: "bg-blue-500" },
+        { name: "HP", value: Math.min(pokemon.stats[0].base_stat,100), color: "bg-green-500" },
+        { name: "Attack", value: Math.min(pokemon.stats[1].base_stat,100), color: "bg-red-500" },
+        { name: "Defense", value: Math.min(pokemon.stats[2].base_stat,100), color: "bg-blue-500" },
     ];
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-
             <div className="bg-gradient-to-br from-yellow-100 to-orange-200 w-[90%] max-w-md p-6 rounded-2xl relative shadow-2xl">
 
                 {/* Close Button */}
