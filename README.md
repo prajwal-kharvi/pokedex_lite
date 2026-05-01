@@ -29,7 +29,7 @@ A responsive Pokemon web application built with React that allows users to brows
 ## Installation and Setup
 
 #Clone the Repository
-git clone <my-repo-url>
+git clone https://github.com/prajwal-kharvi/pokedex_lite
 cd <project-folder>
 
 #Install Dependencies
@@ -61,5 +61,5 @@ http://localhost:5173
 
 ## Deployment
 -The application has been deployed using Vercel.
--Live Demo:  
--GitHub Repository: 
+-Live Demo: https://pokedexlite-cly83bz2y-prajwal-kharvis-projects.vercel.app/ 
+-GitHub Repository: https://github.com/prajwal-kharvi/pokedex_lite
