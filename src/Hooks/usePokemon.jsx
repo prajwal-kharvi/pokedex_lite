@@ -35,7 +35,6 @@ export const usePokemon = () => {
                     throw new Error("Failed to fetch Pokemon");
                 }
                 const data = await res.json();
-                console.log(data)
 
                 setPrevUrl(data.previous)
                  setNextUrl(data.next)
